@@ -1,17 +1,18 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * main - Prints the alphabetic
- *
- * Return: Always (Success)
+ * Description: main - Print the alphabetic
+ * Return: 0 if successfull.
  */
 int main(void)
 {
-	char c;
+	char low;
 
-	for (c = 'a'; c <= 'z'; c++)
-		putchar(c);
+	for (low = 'a'; low <= 'z'; low++)
+	{
+		putchar(low);
+	}
+	printf("\n");
 
-	putchar('\n');
 	return (0);
 }
