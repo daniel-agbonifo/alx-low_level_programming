@@ -1,21 +1,28 @@
 #include "main.h"
+
 /**
- * puts2 - prints a string, followed by a new line,
- * @str: pointer to the string to print
- * Return: void
-*/
+ * _atoi - converts a string to an integer
+ * @s: string to convert
+ *
+ * Return: value of integer
+ */
+int _atoi(char *s)
+{
+	int i, j, n, m;
 
-void puts2(char *str)
-{
-int i = 0;
-while (str[i] != '\0')
-{
-	if (i % 2 == 0)
+	i = n = 0;
+	m = 1;
+	while ((*(s + i) < '0' || *(s + i) > '9') && (*(s + i) != '\0'))
 	{
-		_putchar(str[i]);
+		if (*(s + i) == '-')
+			m *= -1;
+		i++;
 	}
-
-	i++;
-}
-_putchar('\n');
+	j = i;
+	while ((*(s + j) >= '0') && (*(s + j) <= '9'))
+	{
+		n = n * 10 + m * (*(s + j) - '0');
+		j++;
+	}
+	return (n);
 }
